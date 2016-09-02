@@ -15,8 +15,9 @@ Vue.use(VueRouter)
 let app = Vue.extend(App)
 //创建路由实例
 let router = new VueRouter({
-	hashbang: false,
-	history: true
+  //history模式开启容易导致路径显示混乱(路由地址自动删减从跟域名开始)
+	//hashbang: false,
+	//history: true
 })
 //创建路由地址
 router.map({
@@ -49,4 +50,4 @@ router.map({
 router.redirect({
 	'/':'/home'
 })
-router.start(app,'#app')
+router.start(app,'app')
